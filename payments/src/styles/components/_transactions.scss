@@ -1,0 +1,22 @@
+.Transaction {
+    background-color: $white;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    font-size: 1.1rem;
+    .concept {
+        display: flex;
+        align-items: center;
+        color: $grey;
+        .concept__icon {
+            margin-top: .4rem;
+            margin-right: .3rem;
+        }
+    }
+    .price{
+        color: $grey;
+    }
+}

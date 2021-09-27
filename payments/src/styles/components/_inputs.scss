@@ -1,0 +1,14 @@
+.Input-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: .5rem;
+    padding: 0 1rem;
+    input {
+        margin-top: .3rem;
+        border-bottom: 1px solid $light-grey;
+        padding: .8rem .5rem .2rem .3rem;
+        font-size: 1.1rem;
+        color: $grey;
+        background-color: transparent;
+    }
+}
