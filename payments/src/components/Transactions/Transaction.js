@@ -1,20 +1,22 @@
 import React from 'react'
-import { GrAdd, GrSubtract } from "react-icons/gr";
+import { ConceptAdd, ConceptSubtract } from './Concept';
+
 
 
 export const Transaction = (props) => {
+    const isSubtract = props.isSubtract;
+    if (isSubtract) {
+        return (
+        <div className="Transaction">
+            <ConceptSubtract text={props.concept}/>
+            <p>$ {props.price}</p>
+        </div>
+        )
+    }
     return (
         <div className="Transaction">
-            <div className="concept">
-                <div className="concept__icon"><GrSubtract size={18}/>
-                </div>
-                <div className="concept__item">
-                    Comida
-                </div>
-            </div>
-            <div className="price">
-                <p>$<span>49,99</span></p>
-            </div>
+            <ConceptAdd text={props.concept}/>
+            <p>$ {props.price}</p>
         </div>
     )
 }

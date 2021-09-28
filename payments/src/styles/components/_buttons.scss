@@ -2,8 +2,13 @@
     font-family: 'Fredoka One', cursive;
     color: $white;
     background-color: $blue;
-    padding: .5rem .9rem;
+    padding: .7rem .9rem;
     border-radius: .5rem;
     width: 100%;
     font-size: 1.3rem;
+    transition: .2s linear;
+    &:hover {
+        box-shadow: 0 0 1px rgba($color: #000000, $alpha: .4);
+        background-color: #9ec7f4;
+    }
 }

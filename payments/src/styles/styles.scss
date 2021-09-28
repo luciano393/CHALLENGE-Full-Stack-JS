@@ -2,9 +2,12 @@
 @import './base/settings';
 
 // Pages
+@import './Pages/GetStarted.scss';
+
 
 // Components
 @import './components/buttons';
 @import './components/inputs';
 @import './components/titles';
 @import './components/transactions';
+@import './components/Concept';

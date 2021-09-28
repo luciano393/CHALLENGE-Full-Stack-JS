@@ -3,8 +3,15 @@
     color: $blue;
     text-align: center;
     padding: .5rem 1rem;
+    font-size: 3rem;
 }
 .Subtitle {
     color: $text-color;
-    
+    font-size: 1.3rem;
+}
+.Parrafo {
+    color: $grey;
+    margin: 1rem .5rem 2rem .5rem;
+    line-height: 1.5;
+    font-size: 1.1rem;
 }
