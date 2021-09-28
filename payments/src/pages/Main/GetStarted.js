@@ -2,6 +2,7 @@ import React from 'react'
 import { SubTitle, Title } from '../../components/Titles/Title'
 import imagen from '../../assets/images/imagen-5.png'
 import { ButtonComponent } from '../../components/Button/ButtonComponent'
+import { NavLink } from 'react-router-dom'
 
 export const GetStarted = () => {
     return (
@@ -18,7 +19,9 @@ export const GetStarted = () => {
                     <p className="Parrafo">
                         Payments will keep a record of your daily transactions
                     </p>
-                    <ButtonComponent text="Get Started"/>
+                    <NavLink to="/login">
+                        <ButtonComponent text="Get Started" />
+                    </NavLink>
                 </section>
             </div>
         </div>

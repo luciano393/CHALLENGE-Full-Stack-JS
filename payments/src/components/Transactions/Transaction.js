@@ -5,7 +5,7 @@ import { ConceptAdd, ConceptSubtract } from './Concept';
 
 export const Transaction = (props) => {
     const isSubtract = props.isSubtract;
-    if (isSubtract === 'gasto') {
+    if (isSubtract) {
         return (
         <div className="Transaction">
             <ConceptSubtract text={props.concept}/>

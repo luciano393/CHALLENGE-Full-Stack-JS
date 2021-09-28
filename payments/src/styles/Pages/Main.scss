@@ -1,6 +1,22 @@
 .Main {
+    display: flex;
+    flex-direction: column;
     header {
         padding: .5rem 1rem;
+        .btn-menu {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            background-color: $blue;
+            border-radius: .5rem;
+            @media (min-width:980px) {
+                display: none;
+            }
+        }
+        @media (min-width:980px) {
+            position: fixed;
+            flex-direction: column;
+        }
     }
     .banner {
         background-color: $blue;
@@ -9,6 +25,7 @@
         display: flex;
         align-items: center;
         padding: 2rem 1.5rem;
+        justify-content: space-between;
         p {
             font-size: 1.7rem;
             line-height: 1.5;
@@ -37,5 +54,15 @@
     }
     .list {
         margin: 2rem 2rem;
+    }
+    @media (min-width:980px) {
+        flex-direction: row;
+        header {
+            margin: 2rem 4rem;
+        }
+        .flex-container {
+            width: 75%;
+            margin: 2rem 2rem 2rem 28rem;
+        }
     }
 }
