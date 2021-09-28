@@ -1,11 +1,11 @@
 import React from "react";
-import { Login } from "./pages/Auth/Login";
+import { AppRouter } from "./routers/AppRouter";
 import './styles/styles.scss';
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <AppRouter />
     </div>
   );
 }

@@ -2,7 +2,8 @@
     header {
         position: relative;
         width: 100%;
-        padding: 3rem 2rem;
+        padding: 2rem 2rem;
+        text-align: center;
     }
     .flex-container {
         display: flex;
@@ -16,7 +17,10 @@
         }
         section {
             text-align: center;
-            margin: 0 5rem 4rem 5rem;
+            margin: 2rem 4rem 4rem 4rem;
+            p {
+                padding: .7rem 1rem;
+            }
         }
         @media (min-width:600px) {
             padding: 2rem;
@@ -24,8 +28,11 @@
         @media (min-width:720px) {
             flex-direction: row;
             section {
-                margin-top: 3rem;
-                margin-right: 5rem;
+                max-width: 30rem;
+                margin: 3rem auto;
+                p {
+                    padding: 1rem 5rem;
+                }
             }
         }
     }

@@ -1,13 +1,13 @@
 .Input-box {
     display: flex;
     flex-direction: column;
-    margin-top: .5rem;
+    margin: 1rem 0;
     padding: 0 1rem;
     input {
-        margin-top: .3rem;
-        border-bottom: 1px solid $light-grey;
+        margin-top: 1rem;
+        border-bottom: 1px solid $grey;
         padding: .8rem .5rem .2rem .3rem;
-        font-size: 1.1rem;
+        font-size: 1.5rem;
         color: $grey;
         background-color: transparent;
     }

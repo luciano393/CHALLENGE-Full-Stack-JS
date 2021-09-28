@@ -10,3 +10,8 @@ export const SubTitle = (props) => {
         <h3 className="Subtitle">{props.title}</h3>
     )
 }
+export const Parrafo = (props) => {
+    return (
+        <p className="Parrafo">{props.text}</p>
+    )
+}

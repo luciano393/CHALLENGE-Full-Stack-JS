@@ -1,0 +1,36 @@
+.Login {
+    header {
+        position: relative;
+        width: 100%;
+        padding: 2rem 2rem;
+        text-align: center;
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        form {
+            margin: 6rem 3rem 0 3rem;
+            @media (min-width:720px) {
+                max-width: 40rem;
+                margin: 6rem auto 0 auto;
+            }
+            .register {
+                text-align: center;
+            }
+        }
+        .img-content {
+            display: none;
+            width: 20rem;
+            margin: auto;
+            img {
+                width: 100%;
+            }
+            @media (min-width:720px) {
+                display: inline-block;
+            }
+        }
+        @media (min-width:720px) {
+            flex-direction: row;
+        }
+    }
+}
