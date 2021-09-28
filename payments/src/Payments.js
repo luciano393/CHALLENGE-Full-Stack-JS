@@ -1,11 +1,11 @@
 import React from "react";
-import { GetStarted } from "./pages/Main/GetStarted";
+import { Login } from "./pages/Auth/Login";
 import './styles/styles.scss';
 
 function App() {
   return (
     <div className="App">
-      <GetStarted />
+      <Login />
     </div>
   );
 }
