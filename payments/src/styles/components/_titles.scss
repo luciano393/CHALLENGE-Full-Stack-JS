@@ -3,6 +3,9 @@
     color: $blue;
     padding: .5rem 1rem;
     font-size: 3rem;
+    @media (min-width:980px) {
+        font-size: 4.5rem;
+    }
 }
 .Subtitle {
     color: $text-color;

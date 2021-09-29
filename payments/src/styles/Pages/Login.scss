@@ -10,9 +10,17 @@
         flex-direction: column;
         form {
             margin: 6rem 3rem 0 3rem;
+            .forget {
+                color: $grey;
+                padding-left: 1rem;
+            }
             @media (min-width:720px) {
                 max-width: 40rem;
                 margin: 6rem auto 0 auto;
+                .forget {
+                    color: $grey;
+                    padding-left: 1rem;
+                }
             }
             .register {
                 text-align: center;

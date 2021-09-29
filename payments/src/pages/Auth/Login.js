@@ -1,11 +1,14 @@
 import React from 'react'
+import { useForm } from "react-hook-form";
 import { ButtonComponent } from '../../components/Button/ButtonComponent'
 import { Input } from '../../components/Inputs/Input'
-import { Parrafo, Title } from '../../components/Titles/Title'
+import { Title } from '../../components/Titles/Title'
 import imagen from '../../assets/images/imagen-4.png'
 import { NavLink } from 'react-router-dom';
 
 export const Login = () => {
+    
+
     return (
         <div className="Login">
             <header>
@@ -17,6 +20,7 @@ export const Login = () => {
                 <form>
                     <Input text="User"/>
                     <Input text="Password"/>
+                    <NavLink to="/" className="forget">Did you forget your password?</NavLink>
                     <ButtonComponent text="Login"/>
                     <div className="register">
                         <NavLink to="/register" className="Parrafo">Register</NavLink>

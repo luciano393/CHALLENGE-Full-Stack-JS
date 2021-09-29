@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { SubTitle, Title } from '../../components/Titles/Title'
-import imagen from '../../assets/images/imagen.png'
 import { Transaction } from '../../components/Transactions/Transaction';
 import { Menu } from '../../components/Menu/Menu';
 import { ToggleMenu } from '../../components/Menu/ToggleMenu';
+import { Balance } from '../../components/Balance/Balance';
+import { Banner } from '../../components/Banner/Banner';
 
-export const Main = () => {
+export const Main = (props) => {
     const [toggleMenu, setToggleMenu] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
@@ -39,22 +40,13 @@ export const Main = () => {
                 </nav>
             </header>
             <div className="flex-container">
-                <div className="banner">
-                    <p>Manage your money well</p>
-                    <img src={imagen} alt="" />
-                </div>
-                <div className="balance">
-                    <SubTitle title="Balance" />
-                    <div className="balance__item">
-                        <span>$400,99</span>
-                    </div>
-                </div>
-                <ul className="list">
+                <Banner />
+                <Balance price={props.balance}/>
+                <div className="transactions">
                     <SubTitle title="Your last ten transactions"/>
-                    <Transaction isSubtract={true} concept="Cine" price="25,25"/>
-                    <Transaction isSubtract={true} concept="Cine" price="25,25"/>
-                    <Transaction isSubtract={false} concept="Salario" price="450,50"/>
-                </ul>
+                    <ul className="list">
+                    </ul>
+                </div>
             </div>
         </div>
     )
