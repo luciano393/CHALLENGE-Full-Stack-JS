@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { SubTitle, Title } from '../../components/Titles/Title'
-import { Transaction } from '../../components/Transactions/Transaction';
 import { Menu } from '../../components/Menu/Menu';
 import { ToggleMenu } from '../../components/Menu/ToggleMenu';
 import { Balance } from '../../components/Balance/Balance';
 import { Banner } from '../../components/Banner/Banner';
+import { List } from '../../components/Transactions/List';
+import clienteAxios from '../../config/axios';
+
 
 export const Main = (props) => {
     const [toggleMenu, setToggleMenu] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-
 
     const toggleNav = () => {
         setToggleMenu(!toggleMenu)
@@ -26,7 +27,26 @@ export const Main = (props) => {
         return () => {
             window.removeEventListener('resize', changeWidth)
         }
-  }, [])
+    }, [])
+
+    // State de la app
+    const [transactions, saveTransactions] = useState([]);
+
+    useEffect( () => {
+        const consultarAPI = () => {
+        clienteAxios.get('/presupuesto')
+            .then(res => {
+            // colocar en el state resultados
+            saveTransactions(res.data)
+            })
+            .catch(err => {
+            console.log(err)
+            })
+        }
+        consultarAPI();
+    }, [] );
+
+    
 
     return (
         <div className="Main">
@@ -41,11 +61,11 @@ export const Main = (props) => {
             </header>
             <div className="flex-container">
                 <Banner />
-                <Balance price={props.balance}/>
+                <Balance price={props.balance}
+                trans={transactions}/>
                 <div className="transactions">
                     <SubTitle title="Your last ten transactions"/>
-                    <ul className="list">
-                    </ul>
+                    <List trans={transactions}/>
                 </div>
             </div>
         </div>

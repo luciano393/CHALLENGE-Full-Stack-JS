@@ -1,11 +1,13 @@
-import React from "react";
+import React  from "react";
 import { AppRouter } from "./routers/AppRouter";
 import './styles/styles.scss';
 
 function App() {
+
+  
   return (
     <div className="App">
-      <AppRouter />
+      <AppRouter/>
     </div>
   );
 }

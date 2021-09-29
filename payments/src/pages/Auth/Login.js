@@ -1,5 +1,4 @@
 import React from 'react'
-import { useForm } from "react-hook-form";
 import { ButtonComponent } from '../../components/Button/ButtonComponent'
 import { Input } from '../../components/Inputs/Input'
 import { Title } from '../../components/Titles/Title'

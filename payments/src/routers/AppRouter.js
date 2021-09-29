@@ -1,7 +1,6 @@
-import React from 'react'
+import React  from 'react'
 import {
     BrowserRouter as Router,
-    Redirect,
     Switch,
     Route
 } from 'react-router-dom';
@@ -10,7 +9,8 @@ import { Login } from '../pages/Auth/Login';
 import { Register } from '../pages/Auth/Register';
 import { Main } from '../pages/Main/Main';
 
-export const AppRouter = () => {
+export const AppRouter = (props) => {
+
     return (
         <div>
             <Router>
@@ -19,7 +19,7 @@ export const AppRouter = () => {
                         <Route path="/" exact component={GetStarted} />
                         <Route path="/login" exact component={Login} />
                         <Route path="/register" exact component={Register} />
-                        <Route path="/main" exact component={Main} />
+                        <Route path="/main" exact component={Main}/>
                     </Switch>
                 </div>
             </Router>
