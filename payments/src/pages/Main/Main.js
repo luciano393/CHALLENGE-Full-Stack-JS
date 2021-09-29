@@ -6,6 +6,8 @@ import { Balance } from '../../components/Balance/Balance';
 import { Banner } from '../../components/Banner/Banner';
 import { List } from '../../components/Transactions/List';
 import clienteAxios from '../../config/axios';
+import { AddButton } from '../../components/Button/AddButton';
+import { NavLink } from 'react-router-dom';
 
 
 export const Main = (props) => {
@@ -29,24 +31,6 @@ export const Main = (props) => {
         }
     }, [])
 
-    // State de la app
-    const [transactions, saveTransactions] = useState([]);
-
-    useEffect( () => {
-        const consultarAPI = () => {
-        clienteAxios.get('/presupuesto')
-            .then(res => {
-            // colocar en el state resultados
-            saveTransactions(res.data)
-            })
-            .catch(err => {
-            console.log(err)
-            })
-        }
-        consultarAPI();
-    }, [] );
-
-    
 
     return (
         <div className="Main">
@@ -61,13 +45,16 @@ export const Main = (props) => {
             </header>
             <div className="flex-container">
                 <Banner />
-                <Balance price={props.balance}
-                trans={transactions}/>
+                <Balance 
+                trans={props.trans}/>
                 <div className="transactions">
                     <SubTitle title="Your last ten transactions"/>
-                    <List trans={transactions}/>
+                    <List trans={props.trans}/>
                 </div>
             </div>
+            <NavLink to="/newtransaction">
+                <AddButton />
+            </NavLink>
         </div>
     )
 }

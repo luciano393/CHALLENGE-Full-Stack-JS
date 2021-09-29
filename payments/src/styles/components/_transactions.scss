@@ -1,4 +1,4 @@
-.Transaction {
+.Transactions {
     background-color: $white;
     border-radius: .5rem;
     display: flex;
@@ -7,7 +7,11 @@
     justify-content: space-between;
     padding: 1rem 1rem;
     font-size: 1.3rem;
+    cursor: pointer;
     p{
         color: $grey;
+        .date {
+            font-size: .7rem;
+        }
     }
 }

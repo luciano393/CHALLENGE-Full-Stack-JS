@@ -7,10 +7,13 @@
         margin: 1rem auto;
         text-align: center;
         padding: 2rem;
-        span {
+        p {
             font-size: 2.5rem;
             color: $white;
             font-family: 'Fredoka One', cursive;
+            span {
+                margin-left: .3rem;
+            }
         }
     }
 }

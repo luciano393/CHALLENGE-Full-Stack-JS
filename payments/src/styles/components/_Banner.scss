@@ -7,10 +7,14 @@
     padding: 2rem 1.5rem;
     justify-content: space-between;
     p {
-        font-size: 1.7rem;
+        font-size: 2rem;
         line-height: 1.5;
+        padding-right: .5rem;
         color: $white;
         font-family: 'Fredoka One', cursive;
+        @media (min-width:980px) {
+            font-size: 2.5rem;
+        }
     }
     img {
         width: 8rem;

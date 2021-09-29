@@ -3,7 +3,7 @@
     flex-direction: column;
     margin: 1rem 0;
     padding: 0 1rem;
-    input {
+    input, select, option {
         margin-top: 1rem;
         border-bottom: 1px solid $grey;
         padding: .8rem .5rem .2rem .3rem;

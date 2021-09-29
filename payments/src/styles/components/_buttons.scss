@@ -13,3 +13,31 @@
         background-color: #9ec7f4;
     }
 }
+
+.AddButton {
+    position: fixed;
+    display: flex;
+    right: 43%;
+    bottom: 2rem;
+    padding: .5rem;
+    border-radius: 50%;
+    color: $white;
+    background-color: $blue;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0 0 1px rgba($color: #000000, $alpha: .4);
+        background-color: #9ec7f4;
+    }
+}
+.CloseBtn {
+    margin-top: .5rem;
+    border-radius: 50%;
+    background-color: $blue;
+    padding: .5rem;
+    display: flex;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0 0 1px rgba($color: #000000, $alpha: .4);
+        background-color: #9ec7f4;
+    }
+}

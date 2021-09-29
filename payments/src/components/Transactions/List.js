@@ -1,19 +1,20 @@
 import React from 'react'
-import { Transaction } from './Transaction';
+import { Link } from 'react-router-dom';
+import { Transactions } from '../Transactions/Transactions'
 
-export const List = ({trans}) => {
-    console.log(trans)
+export const List = ({trans}, props) => {
+
     if(trans.length === 0) return null;
 
     return (
         <>   
           {trans.map(trans => (
-              <Transaction isSubtract={(trans.tipo === 'gasto') && true} concept={trans.concepto} price={trans.monto}/>
+              <Link to={`/transaction/${trans._id}`} key={trans._id}>
+                <Transactions isSubtract={(trans.tipo === 'gasto') && true} concept={trans.concepto} price={trans.monto} date={trans.fecha}/>
+              </Link>
           ))} 
         </>
     )
 }
-// {trans.map(trans => (
-//     <h3>{trans.tipo}-{trans.concepto}-{trans.monto}</h3>
-// ))}
-/* <Transaction isSubtract={true} concept="comida" price="20.99" /> */
+
+// onClick={togglePopEdit}
