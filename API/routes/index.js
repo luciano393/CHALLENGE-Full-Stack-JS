@@ -1,5 +1,7 @@
+const { request } = require('express');
 const express = require('express');
 const presupuestoController = require('../controllers/presupuestoControllers');
+const singUpTemplateCopy = require('../models/SingUp')
 const router = express.Router();
 
 module.exports = function() {
@@ -28,6 +30,22 @@ module.exports = function() {
     router.delete('/presupuesto/:id', 
         presupuestoController.eliminarTransaccion
     )
+
+    // Signup
+    router.post('/signup', (req, res) => {
+        const signedUpUser = new singUpTemplateCopy({
+            username:request.body.username,
+            email:request.body.email,
+            password:request.body.password
+        })
+        signedUpUser.save()
+        .then(data => {
+            res.json(date)
+        })
+        .catch(error => {
+            res.json(error)
+        })
+    })
 
     return router;
 }
