@@ -1,6 +1,6 @@
 const Presupuesto = require('../models/Presupuesto');
 
-// Cuando se crea un nuevo cliente
+// Cuando se crea una nueva transacción
 exports.nuevaTransaccion = async (req, res, next) => {
     // crear objeto de transaccion con datos de req.body
     const presupuesto = new Presupuesto(req.body);

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const singUpTemplate = new mongoose.Schema({
-    usenme:{
+    username:{
         type:String,
         required:true,
     },

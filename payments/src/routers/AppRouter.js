@@ -63,7 +63,8 @@ export const AppRouter = () => {
                             const transaction = trans.filter(transaction => transaction._id === props.match.params.id)
 
                             return (
-                                <Transaction              saveConsult={saveConsult}   
+                                <Transaction 
+                                saveConsult={saveConsult}   
                                 transaction={transaction[0]}  
                                 />
                             )

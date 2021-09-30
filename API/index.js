@@ -2,6 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
 const cors = require('cors');
+const dotenv = require('dotenv');
+
+dotenv.config()
 
 // Crear el servidor
 const app = express();
@@ -18,14 +21,20 @@ const corsOptions = {
     }
   }
 }
-app.use( cors(corsOptions) );
+app.use( cors() );
 
 // Conectar a mongodb
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/fullstack-api', {
+mongoose.connect(process.env.PRESUPUESTO_ACCESS, {
   useNewUrlParser: true,
   useUnifiedTopology: true
-});
+}, () => console.log("Data base connected two"));
+
+
+mongoose.createConnection(process.env.DATABASE_ACCESS, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+},() => console.log("Database connected"));
 
 // Habilitar el body-parser
 app.use(express.json());
