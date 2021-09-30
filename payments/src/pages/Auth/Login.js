@@ -20,7 +20,9 @@ export const Login = () => {
                     <Input text="User"/>
                     <Input text="Password"/>
                     <NavLink to="/" className="forget">Did you forget your password?</NavLink>
-                    <ButtonComponent text="Login"/>
+                    <ButtonComponent text="Login"
+                    className="btn primary"
+                    />
                     <div className="register">
                         <NavLink to="/register" className="Parrafo">Register</NavLink>
                     </div>

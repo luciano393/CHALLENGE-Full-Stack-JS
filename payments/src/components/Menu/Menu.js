@@ -17,7 +17,9 @@ export const Menu = () => {
                     <p>luciano39340268@gmail.com</p>
                 </div>
             </div>
-            <ButtonComponent text="Log Out"/>
+            <ButtonComponent text="Log Out"
+            className="btn primary"
+            />
         </div>
     )
 }

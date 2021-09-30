@@ -5,7 +5,6 @@ import { ToggleMenu } from '../../components/Menu/ToggleMenu';
 import { Balance } from '../../components/Balance/Balance';
 import { Banner } from '../../components/Banner/Banner';
 import { List } from '../../components/Transactions/List';
-import clienteAxios from '../../config/axios';
 import { AddButton } from '../../components/Button/AddButton';
 import { NavLink } from 'react-router-dom';
 

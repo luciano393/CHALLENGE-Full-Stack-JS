@@ -6,7 +6,7 @@
         background-color: $white;
         border-radius: .5rem;
         max-width: 90%;
-        padding: 0 1rem;
+        padding: 1rem 1rem;
         margin: auto;
         box-shadow: 0 0 5px rgba($color: #000000, $alpha: .3);
         .heading {
@@ -15,7 +15,7 @@
             justify-content: space-between;
         }
         @media (min-width:980px) {
-            max-width: 60%;
+            max-width: 50%;
         }
     }
 }

@@ -3,7 +3,8 @@ import { ButtonComponent } from '../../components/Button/ButtonComponent'
 import { Input, InputSelect } from '../../components/Inputs/Input'
 import { Title } from '../../components/Titles/Title'
 import clienteAxios from '../../config/axios'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { CloseBtn } from '../../components/Button/CloseBtn'
 
 export const NewTransaction = (props) => {
     let history = useHistory()
@@ -42,6 +43,9 @@ export const NewTransaction = (props) => {
             <div className="content">
                 <div className="heading">
                     <Title title='New'/>
+                    <Link to="/main">
+                        <CloseBtn />
+                    </Link>
                 </div>
                 <div className="content-form">
                     <form onSubmit={createNewTransaction}>
@@ -55,6 +59,7 @@ export const NewTransaction = (props) => {
                         type="text"
                         id="concept"
                         name="concepto"
+                        placeholder="¿What?"
                         onChange={setState}
                         />
                         <Input 
@@ -62,6 +67,7 @@ export const NewTransaction = (props) => {
                         type="text"
                         id="amount"
                         name="monto"
+                        placeholder="99.99"
                         onChange={setState}
                         />
                         <Input 
@@ -72,7 +78,9 @@ export const NewTransaction = (props) => {
                         placeholder="DD-MM-AAAA"
                         onChange={setState}
                         />
-                        <ButtonComponent text="Add" />
+                        <ButtonComponent text="Add" 
+                        className="btn primary"
+                        />
                     </form>
                 </div>
             </div>

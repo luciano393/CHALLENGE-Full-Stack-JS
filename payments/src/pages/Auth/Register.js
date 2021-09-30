@@ -19,7 +19,9 @@ export const Register = () => {
                     <Input text="Email"/>
                     <Input text="Password"/>
                     <Input text="Repeat password"/>
-                    <ButtonComponent text="Register"/>
+                    <ButtonComponent text="Register"
+                    className="btn primary"
+                    />
                 </form>
                 <div className="img-content">
                     <img src={imagen} alt="" />

@@ -1,4 +1,4 @@
-import React  from 'react'
+import React, { useEffect, useState }  from "react";
 import {
     BrowserRouter as Router,
     Switch,
@@ -10,11 +10,33 @@ import { Register } from '../pages/Auth/Register';
 import { Main } from '../pages/Main/Main';
 import { NewTransaction } from '../pages/Main/NewTransaction';
 import { Transaction } from '../pages/Main/Transaction';
+import clienteAxios from "../config/axios";
 
 
 
-export const AppRouter = (props) => {
+export const AppRouter = () => {
+    const [trans, saveTrans] = useState([]);
+    const [consult, saveConsult] = useState(true);
 
+    useEffect( () => {
+        if(consult) {
+            const consultarAPI = () => {
+                clienteAxios.get('/presupuesto')
+                    .then(res => {
+                        // colocar en el state resultados
+                        saveTrans(res.data)
+                            
+                        saveConsult(false);
+                    })
+                    .catch(err => {
+                    console.log(err)
+                    })
+                }
+            consultarAPI();
+        }
+    }, [consult] );
+  
+    
     return (
         <div>
             <Router>
@@ -29,22 +51,25 @@ export const AppRouter = (props) => {
                         <Route path="/register" exact component={Register} 
                         />
 
-                        <Route path="/main" exact component={() => <Main trans={props.trans} />}
+                        <Route path="/main" exact component={() => <Main trans={trans} />}
                         />
 
                         <Route path="/newtransaction" 
-                        exact component={() => <NewTransaction saveConsult={props.saveConsult} />} 
+                        exact component={() => <NewTransaction saveConsult={saveConsult} />} 
                         />
 
-                        <Route path="/transaction/:id" exat
+                        <Route path="/transaction/:id" exact
                         render={(props) => {
-                            console.log(props);
+                            const transaction = trans.filter(transaction => transaction._id === props.match.params.id)
 
                             return (
-                                <Transaction />
+                                <Transaction              saveConsult={saveConsult}   
+                                transaction={transaction[0]}  
+                                />
                             )
                         }}
                         />
+
                     </Switch>
                 </div>
             </Router>

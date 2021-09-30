@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { Transactions } from '../Transactions/Transactions'
 
-export const List = ({trans}, props) => {
+export const List = ({trans}) => {
 
     if(trans.length === 0) return null;
 

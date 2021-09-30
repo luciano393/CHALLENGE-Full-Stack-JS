@@ -20,7 +20,9 @@ export const GetStarted = () => {
                         Payments will keep a record of your daily transactions
                     </p>
                     <NavLink to="/login">
-                        <ButtonComponent text="Get Started" />
+                        <ButtonComponent text="Get Started" 
+                        className="btn primary"
+                        />
                     </NavLink>
                 </section>
             </div>

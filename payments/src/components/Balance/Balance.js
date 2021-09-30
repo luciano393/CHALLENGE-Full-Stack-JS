@@ -20,7 +20,7 @@ export const Balance = ({trans}) => {
         <div className="balance">
             <SubTitle title="Balance" />
             <div className="balance__item">
-                <p>Ingresado: $<span>{sumaIngresos}</span></p>
+                <p>Ingresado: $<span>{Math.floor(sumaIngresos)}</span></p>
                 <p>Gastado: $<span>{sumaGastos}</span></p>
                 <p>Restante $<span>{sumaIngresos - sumaGastos}</span></p>
             </div>

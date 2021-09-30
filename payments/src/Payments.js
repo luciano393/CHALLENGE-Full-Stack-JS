@@ -5,7 +5,7 @@ import './styles/styles.scss';
 
 function App() {
   // State de la app
-  const [transactions, saveTransactions] = useState([]);
+  const [trans, saveTrans] = useState([]);
   const [consult, saveConsult] = useState(true);
 
   useEffect( () => {
@@ -14,7 +14,7 @@ function App() {
               clienteAxios.get('/presupuesto')
                   .then(res => {
                       // colocar en el state resultados
-                      saveTransactions(res.data)
+                      saveTrans(res.data)
                           
                       saveConsult(false);
                   })
@@ -28,7 +28,7 @@ function App() {
   
   return (
     <div className="App">
-      <AppRouter saveConsult={saveConsult} trans={transactions}/>
+      <AppRouter saveConsult={saveConsult} trans={trans}/>
     </div>
   );
 }
