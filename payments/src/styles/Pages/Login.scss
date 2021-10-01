@@ -11,6 +11,7 @@
         form {
             margin: 6rem 3rem 0 3rem;
             .forget {
+                margin: 1rem 0;
                 color: $grey;
                 padding-left: 1rem;
             }
@@ -18,11 +19,13 @@
                 max-width: 40rem;
                 margin: 6rem auto 0 auto;
                 .forget {
+                    margin: 1rem 0;
                     color: $grey;
                     padding-left: 1rem;
                 }
             }
             .register {
+                margin-top: .5rem;
                 text-align: center;
             }
         }

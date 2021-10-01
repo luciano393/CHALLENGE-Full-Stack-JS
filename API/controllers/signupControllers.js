@@ -13,11 +13,10 @@ exports.nuevoUsuario = async (req, res, next) => {
         next();
     }
 }
-
-// Obtiene un Usuario por su ID
+// Obtiene un usuario
 exports.obtenerUsuario = async (req, res, next) => {
     try {
-        const usuario = await SignUp.findById(req.params.id);
+        const usuario = await SignUp.find({username : req.params.username})
         res.json(usuario);
     } catch (error) {
         console.log(error);

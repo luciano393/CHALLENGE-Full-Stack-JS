@@ -11,7 +11,9 @@ export const Input = (props) => {
             name={props.name}
             placeholder={props.placeholder}
             value={props.value} 
-            onChange={props.onChange}/>
+            onChange={props.onChange}
+            handleChange={props.handleChange}
+            />
         </div>
     )
 }

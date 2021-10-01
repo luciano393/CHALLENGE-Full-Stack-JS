@@ -2,7 +2,6 @@ const { request } = require('express');
 const express = require('express');
 const signupController = require('../controllers/signupControllers');
 const presupuestoController = require('../controllers/presupuestoControllers');
-const singUpTemplateCopy = require('../models/SingUp')
 const router = express.Router();
 
 module.exports = function() {
@@ -36,16 +35,16 @@ module.exports = function() {
     router.post('/signup',
         signupController.nuevoUsuario
     )
-    // Obtiene un nuevo Usuario por su ID
-    router.get('/signup',
+    // Obtiene un Usuario
+    router.get('/signup/:username',
         signupController.obtenerUsuario
     )
     // Actualiza usuario
-    router.put('/signup',
+    router.put('/signup/:id',
         signupController.actualizarUsuario
     )
     // Elimina usuario
-    router.delete('/signup',
+    router.delete('/signup/:id',
         signupController.eliminarUsuario
     )
 

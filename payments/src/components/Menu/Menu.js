@@ -2,6 +2,7 @@ import React from 'react'
 import { ButtonComponent } from '../Button/ButtonComponent'
 import { SubTitle } from '../Titles/Title'
 import avatar from '../../assets/images/avataaars.png'
+import { Link } from 'react-router-dom'
 
 export const Menu = () => {
     
@@ -17,9 +18,11 @@ export const Menu = () => {
                     <p>luciano39340268@gmail.com</p>
                 </div>
             </div>
-            <ButtonComponent text="Log Out"
-            className="btn primary"
-            />
+            <Link to="/">
+                <ButtonComponent text="Log Out"
+                className="btn primary"
+                />
+            </Link>
         </div>
     )
 }
