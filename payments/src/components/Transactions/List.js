@@ -2,15 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { Transactions } from '../Transactions/Transactions'
 
-export const List = ({trans}) => {
+export const List = ({trans, user}) => {
 
     if(trans.length === 0) return null;
-
+    
+    
     return (
         <>   
           {trans.map(trans => (
               <Link to={`/transaction/${trans._id}`} key={trans._id}>
-                <Transactions isSubtract={(trans.tipo === 'gasto') && true} concept={trans.concepto} price={trans.monto} date={trans.fecha}/>
+                {(trans.autor === user) && <Transactions isSubtract={(trans.tipo === 'gasto') && true} concept={trans.concepto} price={trans.monto} date={trans.fecha}/>}
               </Link>
           ))} 
         </>
