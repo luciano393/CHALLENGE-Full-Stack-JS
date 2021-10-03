@@ -49,7 +49,7 @@ export const Main = (props) => {
             <div className="flex-container">
                 <Banner />
                 <Balance 
-                trans={props.trans}/>
+                trans={props.trans} user={objectUser._id}/>
                 <div className="transactions">
                     <SubTitle title="Your last ten transactions"/>
                     <List trans={props.trans} user={objectUser._id}/>
