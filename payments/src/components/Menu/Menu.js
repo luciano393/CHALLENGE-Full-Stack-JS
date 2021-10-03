@@ -4,7 +4,7 @@ import { SubTitle } from '../Titles/Title'
 import avatar from '../../assets/images/avataaars.png'
 import { Link } from 'react-router-dom'
 
-export const Menu = () => {
+export const Menu = (props) => {
     
 
     return (
@@ -14,8 +14,8 @@ export const Menu = () => {
                     <img src={avatar} alt="" />
                 </div>
                 <div className="profile__info">
-                    <SubTitle title="Luciano"/>
-                    <p>luciano39340268@gmail.com</p>
+                    <SubTitle title={props.name}/>
+                    <p>{props.email}</p>
                 </div>
             </div>
             <Link to="/">

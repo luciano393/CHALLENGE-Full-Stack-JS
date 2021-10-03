@@ -7,11 +7,15 @@ import { Banner } from '../../components/Banner/Banner';
 import { List } from '../../components/Transactions/List';
 import { AddButton } from '../../components/Button/AddButton';
 import { NavLink } from 'react-router-dom';
+import { useLocation  } from 'react-router-dom';
 
 
 export const Main = (props) => {
     const [toggleMenu, setToggleMenu] = useState(false)
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const location = useLocation();
+    const objectUser = location.state.params;
+
 
     const toggleNav = () => {
         setToggleMenu(!toggleMenu)
@@ -37,7 +41,7 @@ export const Main = (props) => {
                 <Title title="Payments" />
                 <nav>
                     {(toggleMenu || screenWidth > 980) && (
-                        <Menu />
+                        <Menu name={objectUser.username} email={objectUser.email}/>
                     )}
                     <button onClick={toggleNav}><ToggleMenu /></button>
                 </nav>
@@ -48,10 +52,10 @@ export const Main = (props) => {
                 trans={props.trans}/>
                 <div className="transactions">
                     <SubTitle title="Your last ten transactions"/>
-                    <List trans={props.trans}/>
+                    <List trans={props.trans} user={objectUser._id}/>
                 </div>
             </div>
-            <NavLink to="/newtransaction">
+            <NavLink to={{pathname: "/newtransaction", objectUser}}>
                 <AddButton />
             </NavLink>
         </div>

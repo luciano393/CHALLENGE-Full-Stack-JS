@@ -46,7 +46,7 @@ export const Login = () => {
                     timer: 1500
                 })
                 setTimeout(() => {
-                    history.push('/main')
+                    history.push('/main',{params: objectUser});
                 }, 2000)
             } else {
                 Swal.fire({

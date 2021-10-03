@@ -17,7 +17,8 @@ const presupuestoSchema = new Schema({
     tipo: {
         type: String,
         trim: true,
-    }
+    },
+    autor: mongoose.ObjectId
 });
 
 module.exports = mongoose.model('Presupuesto', presupuestoSchema);

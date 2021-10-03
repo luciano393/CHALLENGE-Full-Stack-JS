@@ -3,17 +3,20 @@ import { ButtonComponent } from '../../components/Button/ButtonComponent'
 import { Input, InputSelect } from '../../components/Inputs/Input'
 import { Title } from '../../components/Titles/Title'
 import clienteAxios from '../../config/axios'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import { CloseBtn } from '../../components/Button/CloseBtn'
 
 export const NewTransaction = (props) => {
     let history = useHistory()
+    const location = useLocation();
+    const objectUser = location.objectUser;
     // Generar state como objeto
     const [transaction, saveTransaction] = useState({
         concepto: '',
         monto: '',
         fecha: '',
-        tipo: ''
+        tipo: '',
+        autor: objectUser._id
     });
 
     // Lea los datos del formulario
