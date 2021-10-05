@@ -7,28 +7,6 @@
     min-height: 15rem;
     padding: 1rem;
     flex-direction: column;
-    .profile {
-        margin-top: 1rem;
-        display: flex;
-        max-height: 6rem;
-        .profile__avatar {
-            width: 5rem;
-            height: 5rem;
-            img {
-                width: 100%;
-            }
-        }
-        .profile__info {
-            display: flex;
-            align-items: center;
-            margin: 1rem .5rem;
-            flex-direction: column;
-            p {
-                color: $grey;
-                margin-top: .1rem;
-            }
-        }
-    }
     @media (min-width:980px) {
         position: relative;
         display: flex;

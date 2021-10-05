@@ -1,10 +1,10 @@
 .Input-box {
     display: flex;
     flex-direction: column;
-    margin: 1rem 0;
+    margin: .5rem 0;
     padding: 0 1rem;
     input, select, option {
-        margin-top: 1rem;
+        margin-top: .5rem;
         border-bottom: 1px solid $grey;
         padding: .8rem .5rem .2rem .3rem;
         font-size: 1.5rem;

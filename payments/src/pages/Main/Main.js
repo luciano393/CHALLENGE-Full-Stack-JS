@@ -7,14 +7,33 @@ import { Banner } from '../../components/Banner/Banner';
 import { List } from '../../components/Transactions/List';
 import { AddButton } from '../../components/Button/AddButton';
 import { NavLink } from 'react-router-dom';
-import { useLocation  } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+import { obtenerTransaccionesAccion } from '../../redux/transactionsDucks';
 
-export const Main = (props) => {
+import { useHistory } from 'react-router';
+
+import { useAuth0  } from '@auth0/auth0-react';
+
+export const Main = () => {
+    const history = useHistory();
+    const { isAuthenticated } = useAuth0();
+
+    if(!isAuthenticated) {
+        history.push('/')
+    }
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        const obtenerInfo = () => {
+            dispatch(obtenerTransaccionesAccion())
+        }
+        obtenerInfo()
+    }, [dispatch])
+
     const [toggleMenu, setToggleMenu] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-    const location = useLocation();
-    const objectUser = location.state.params;
 
 
     const toggleNav = () => {
@@ -35,27 +54,28 @@ export const Main = (props) => {
     }, [])
 
 
+
+
     return (
         <div className="Main">
             <header>
                 <Title title="Payments" />
                 <nav>
                     {(toggleMenu || screenWidth > 980) && (
-                        <Menu name={objectUser.username} email={objectUser.email}/>
+                        <Menu/>
                     )}
                     <button onClick={toggleNav}><ToggleMenu /></button>
                 </nav>
             </header>
             <div className="flex-container">
                 <Banner />
-                <Balance 
-                trans={props.trans} user={objectUser._id}/>
+                <Balance />
                 <div className="transactions">
                     <SubTitle title="Your last ten transactions"/>
-                    <List trans={props.trans} user={objectUser._id}/>
+                    <List/>
                 </div>
             </div>
-            <NavLink to={{pathname: "/newtransaction", objectUser}}>
+            <NavLink to="/newtransaction">
                 <AddButton />
             </NavLink>
         </div>

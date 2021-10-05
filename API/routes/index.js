@@ -35,6 +35,11 @@ module.exports = function() {
     router.post('/signup',
         signupController.nuevoUsuario
     )
+    // Obtiene usuarios
+    router.get('/signup',
+        signupController.obtenerUsuarios
+    )
+    
     // Obtiene un Usuario
     router.get('/signup/:username',
         signupController.obtenerUsuario
@@ -51,19 +56,4 @@ module.exports = function() {
 
     return router;
 }
-
-// router.post('/signup', (req, res) => {
-//     const signedUpUser = new singUpTemplateCopy({
-//         username:request.body.username,
-//         email:request.body.email,
-//         password:request.body.password
-//     })
-//     signedUpUser.save()
-//     .then(data => {
-//         res.json(data)
-//     })
-//     .catch(error => {
-//         res.json(error)
-//     })
-// })
 

@@ -5,8 +5,6 @@ import {
     Route
 } from 'react-router-dom';
 import { GetStarted } from '../pages/Main/GetStarted';
-import { Login } from '../pages/Auth/Login';
-import { Register } from '../pages/Auth/Register';
 import { Main } from '../pages/Main/Main';
 import { NewTransaction } from '../pages/Main/NewTransaction';
 import { Transaction } from '../pages/Main/Transaction';
@@ -23,9 +21,8 @@ export const AppRouter = () => {
             const consultarAPI = () => {
                 clienteAxios.get('/presupuesto')
                     .then(res => {
-                        // colocar en el state resultados
                         saveTrans(res.data)
-                            
+                         
                         saveConsult(false);
                     })
                     .catch(err => {
@@ -43,12 +40,6 @@ export const AppRouter = () => {
                 <div>
                     <Switch>
                         <Route path="/" exact component={GetStarted} 
-                        />
-
-                        <Route path="/login" exact component={Login} 
-                        />
-
-                        <Route path="/register" exact component={Register} 
                         />
 
                         <Route path="/main" exact component={() => <Main trans={trans} />}

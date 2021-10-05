@@ -1,10 +1,20 @@
 import React from 'react'
 import { SubTitle, Title } from '../../components/Titles/Title'
 import imagen from '../../assets/images/imagen-5.png'
-import { ButtonComponent } from '../../components/Button/ButtonComponent'
-import { NavLink } from 'react-router-dom'
+
+import { LoginButton } from '../Auth/LoginButton';
+
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const GetStarted = () => {
+
+    const {isLoading } = useAuth0();
+
+    if(isLoading) {
+        return <div>Loading...</div>
+    }
+    
+    
     return (
         <div className="GetStarted">
             <header>
@@ -19,11 +29,7 @@ export const GetStarted = () => {
                     <p className="Parrafo">
                         Payments will keep a record of your daily transactions
                     </p>
-                    <NavLink to="/login">
-                        <ButtonComponent text="Get Started" 
-                        className="btn primary"
-                        />
-                    </NavLink>
+                    <LoginButton className="btn primary"/>
                 </section>
             </div>
         </div>

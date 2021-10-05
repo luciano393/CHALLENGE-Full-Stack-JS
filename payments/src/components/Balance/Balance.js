@@ -1,14 +1,23 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { SubTitle } from '../Titles/Title'
+import { useAuth0 } from '@auth0/auth0-react'
 
-export const Balance = ({trans, user}) => {
+export const Balance = () => {
+    const data = useSelector( store => store.transacciones.array);
+    const { user } = useAuth0();
+    
+    if(!user) return null;
+    if(data.length === 0) return null;
+
+
     let Gastos = 0;
     let Ingresos = 0;
     let sumaGastos = 0;
     let sumaIngresos = 0;
     
-    const arrayGastos = trans.map(trans => ((trans.autor === user) && (trans.tipo === 'gasto') && Gastos + Math.floor(trans.monto)))
-    const arrayIngresos = trans.map(trans => ((trans.autor === user) && (trans.tipo === 'ingreso') && Ingresos + Math.floor(trans.monto)))
+    const arrayGastos = data.map(data => (data.email === user.email) && (data.tipo === 'gasto') && Gastos + Math.floor(data.monto))
+    const arrayIngresos = data.map(data=> (data.email === user.email) && (data.tipo === 'ingreso') && Ingresos + Math.floor(data.monto))
 
     for (let i = 0; i < arrayGastos.length; i++) {
         sumaGastos += arrayGastos[i];

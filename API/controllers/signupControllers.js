@@ -13,6 +13,18 @@ exports.nuevoUsuario = async (req, res, next) => {
         next();
     }
 }
+/* Obtiene todos los pacientes */
+
+exports.obtenerUsuarios = async (req, res, next) => {
+    try {
+        const usuarios = await SignUp.find({})
+        res.json(usuarios);
+    } catch (error) {
+        console.log(error);
+        next();
+    }
+}
+
 // Obtiene un usuario
 exports.obtenerUsuario = async (req, res, next) => {
     try {

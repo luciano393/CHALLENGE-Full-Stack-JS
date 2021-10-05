@@ -3,20 +3,26 @@ import { ButtonComponent } from '../../components/Button/ButtonComponent'
 import { Input, InputSelect } from '../../components/Inputs/Input'
 import { Title } from '../../components/Titles/Title'
 import clienteAxios from '../../config/axios'
-import { Link, useHistory, useLocation } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { CloseBtn } from '../../components/Button/CloseBtn'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export const NewTransaction = (props) => {
+    const { user, isAuthenticated } = useAuth0();
     let history = useHistory()
-    const location = useLocation();
-    const objectUser = location.objectUser;
+
+    if(!isAuthenticated) {
+        history.push('/')
+    }
+
+
     // Generar state como objeto
     const [transaction, saveTransaction] = useState({
         concepto: '',
         monto: '',
         fecha: '',
         tipo: '',
-        autor: objectUser._id
+        email: user.email
     });
 
     // Lea los datos del formulario
@@ -62,7 +68,7 @@ export const NewTransaction = (props) => {
                         type="text"
                         id="concept"
                         name="concepto"
-                        placeholder="¿What?"
+                        placeholder="Enter a new expense or income"
                         onChange={setState}
                         />
                         <Input 

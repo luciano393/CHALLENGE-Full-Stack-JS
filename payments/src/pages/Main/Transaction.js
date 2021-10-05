@@ -4,9 +4,17 @@ import { ButtonComponent } from '../../components/Button/ButtonComponent'
 import { Title } from '../../components/Titles/Title'
 import clienteAxios from '../../config/axios'
 import Swal from 'sweetalert2'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export const Transaction = (props) => {
     let history = useHistory()
+
+    const { isAuthenticated } = useAuth0();
+
+    if(!isAuthenticated) {
+        history.push('/')
+    }
+
 
     if(props.transaction === []) {
         history.push('/main');

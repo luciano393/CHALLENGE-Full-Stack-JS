@@ -1,0 +1,21 @@
+.profile {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    img {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+    }
+    .info {
+        display: flex;
+        align-items: center;
+        margin: 1rem .5rem;
+        flex-direction: column;
+        p {
+            color: $grey;
+            margin-top: .1rem;
+        }
+    }
+}
