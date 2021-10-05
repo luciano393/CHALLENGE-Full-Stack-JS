@@ -1,6 +1,7 @@
 .profile {
     margin-top: 1rem;
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     align-items: center;
     img {
@@ -8,14 +9,8 @@
         height: 6rem;
         border-radius: 50%;
     }
-    .info {
-        display: flex;
-        align-items: center;
-        margin: 1rem .5rem;
-        flex-direction: column;
-        p {
-            color: $grey;
-            margin-top: .1rem;
-        }
+    p {
+        color: $grey;
+        margin-top: .1rem;
     }
 }

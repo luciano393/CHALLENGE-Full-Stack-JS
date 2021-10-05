@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useDispatch } from 'react-redux';
 import { obtenerUsuarioAccion } from "../../redux/userDucks";
+import clienteAxios from "../../config/axios";
 
 export const Profile = () => {
     const { user, isAuthenticated, isLoading } = useAuth0();
@@ -15,14 +16,13 @@ export const Profile = () => {
         dispatch(obtenerUsuarioAccion());
     };
 
+
     return (
         isAuthenticated && (
             <div className="profile">
                 <img src={user.picture} alt={user.name} />
-                <div className="info">
-                    <h2>{user.name}</h2>
-                    <p>Email: {user.email}</p>
-                </div>
+                <h2>{user.name}</h2>
+                <p>Email: {user.email}</p>
             </div>
         )
     )

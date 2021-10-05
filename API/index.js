@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const PORT = 4000;
 
 dotenv.config()
 
@@ -28,13 +29,8 @@ mongoose.Promise = global.Promise;
 mongoose.connect(process.env.PRESUPUESTO_ACCESS, {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}, () => console.log("Data base connected two"));
+}, () => console.log("Data base connected"));
 
-
-mongoose.createConnection(process.env.DATABASE_ACCESS, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-},() => console.log("Database connected"));
 
 // Habilitar el body-parser
 app.use(express.json());
@@ -46,6 +42,6 @@ app.use(express.urlencoded({
 app.use('/', routes())
 
 // Puerto y arrancar el servidor 
-app.listen(4000, () => {
+app.listen((process.env.PORT || 4000), () => {
     console.log('Servidor funcionando...');
 })
