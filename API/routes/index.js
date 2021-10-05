@@ -1,4 +1,3 @@
-const { request } = require('express');
 const express = require('express');
 const signupController = require('../controllers/signupControllers');
 const presupuestoController = require('../controllers/presupuestoControllers');
@@ -16,7 +15,7 @@ module.exports = function() {
         presupuestoController.obtenerTransacciones
     );
     
-    // Obtiene un paciente en especifico (ID)
+    // Obtiene una transaccion en especifica (ID)
     router.get('/presupuesto/:id',
         presupuestoController.obtenerTransaccion
     );

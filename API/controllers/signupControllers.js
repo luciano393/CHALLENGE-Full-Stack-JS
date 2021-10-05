@@ -13,7 +13,7 @@ exports.nuevoUsuario = async (req, res, next) => {
         next();
     }
 }
-/* Obtiene todos los pacientes */
+/* Obtiene todos los usuarios */
 
 exports.obtenerUsuarios = async (req, res, next) => {
     try {
