@@ -7,12 +7,14 @@ export const Input = (props) => {
             <SubTitle title={props.text} />
             <input 
             type={props.type} 
-            id={props.id} 
             name={props.name}
             placeholder={props.placeholder}
             value={props.value} 
             onChange={props.onChange}
+            onBlur={props.onBlur}
+            invalid={props.invalid}
             handleChange={props.handleChange}
+            autoComplete="off"
             />
         </div>
     )
@@ -25,7 +27,10 @@ export const InputSelect = (props) => {
             type={props.type}
             name={props.name}
             id={props.id} 
+            onBlur={props.onBlur}
+            invalid={props.invalid}
             onChange={props.onChange}
+            value={props.value}
             >   
                 <option value=''>Select</option>
                 <option value="gasto">Spending</option>

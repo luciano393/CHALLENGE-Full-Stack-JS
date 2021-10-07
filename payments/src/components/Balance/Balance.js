@@ -29,9 +29,9 @@ export const Balance = () => {
         <div className="balance">
             <SubTitle title="Balance" />
             <div className="balance__item">
-                <p>Ingresado: $<span>{Math.floor(sumaIngresos)}</span></p>
-                <p>Gastado: $<span>{sumaGastos}</span></p>
-                <p>Restante $<span>{sumaIngresos - sumaGastos}</span></p>
+                <p>Income: $<span>{Math.floor(sumaIngresos)}</span></p>
+                <p>Expenses: $<span>{sumaGastos}</span></p>
+                <p>Remaining: $<span>{sumaIngresos - sumaGastos}</span></p>
             </div>
         </div>
     )

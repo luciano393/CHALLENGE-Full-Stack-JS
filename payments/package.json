@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.4",
     "firebase-tools": "^9.19.0",
+    "formik": "^2.2.9",
     "grommet-icons": "^4.6.2",
     "grommet-styles": "^0.2.0",
     "hamburger-react": "^2.4.1",

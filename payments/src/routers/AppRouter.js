@@ -9,6 +9,7 @@ import { Main } from '../pages/Main/Main';
 import { NewTransaction } from '../pages/Main/NewTransaction';
 import { Transaction } from '../pages/Main/Transaction';
 import clienteAxios from "../config/axios";
+import { FormNewTransaction } from "../pages/Main/FormNewTransaction";
 
 
 
@@ -46,7 +47,7 @@ export const AppRouter = () => {
                         />
 
                         <Route path="/newtransaction" 
-                        exact component={() => <NewTransaction saveConsult={saveConsult} />} 
+                        exact component={() => <FormNewTransaction saveConsult={saveConsult} />} 
                         />
 
                         <Route path="/transaction/:id" exact

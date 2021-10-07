@@ -11,4 +11,7 @@
         color: $grey;
         background-color: transparent;
     }
+    input:invalid, select:invalid {
+        border-bottom: 1px solid $red;
+    }
 }

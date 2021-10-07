@@ -71,7 +71,7 @@ export const Main = () => {
                 <Banner />
                 <Balance />
                 <div className="transactions">
-                    <SubTitle title="Your last ten transactions"/>
+                    <SubTitle title="Your last transactions"/>
                     <List/>
                 </div>
             </div>
